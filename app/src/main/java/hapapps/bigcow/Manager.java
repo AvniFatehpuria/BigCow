@@ -1,9 +1,6 @@
 package hapapps.bigcow;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.RelativeLayout;
 import android.graphics.Color;
-import hapapps.bigcow.MainCowActivity;
+import android.widget.RelativeLayout;
 /**
  * Created by afatehp1 on 1/22/17.
  */
@@ -41,10 +38,10 @@ public class Manager {
         public void checkParameters() {
             int grass = getValue();
             if (grass < flirt) {
-                    RelativeLayout bull = (RelativeLayout) activity.findViewById(R.id.Bull_Activity);
+                RelativeLayout bull = (RelativeLayout) activity.findViewById(R.id.Bull_Activity);
 
-                    bull.setBackgroundColor(0x00000000);
-                }
+                bull.setBackgroundColor(0x00000000);
+            }
 
             else {
                 RelativeLayout bull = (RelativeLayout) activity.findViewById(R.id.Bull_Activity);
@@ -54,5 +51,30 @@ public class Manager {
 
         }
 
+    }
+
+    public static class LoveManager extends Manager {
+        int calf = 10;
+        boolean haveCalf = false;
+
+        public LoveManager(android.app.Activity receivedActivity) {
+            value = 0;
+            activity = receivedActivity;
         }
+
+        public void checkParameters() {
+            int love = getValue();
+            if (calf < love) {
+                value = value - 10;
+                haveCalf = true;
+            }
+        }
+
+        public void changeValue(int change) {
+            if (!haveCalf) {
+                value = value + change;
+                checkParameters();
+            }
+        }
+    }
 }
