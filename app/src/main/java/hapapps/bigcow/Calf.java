@@ -18,6 +18,10 @@ public class Calf {
 
     }
 
+    public void testMethod() {
+
+    }
+
 
 
 
