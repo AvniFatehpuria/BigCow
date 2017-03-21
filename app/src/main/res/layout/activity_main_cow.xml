@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:id="@+id/activity_main_cow"
@@ -14,141 +15,173 @@
     tools:context="hapapps.bigcow.MainCowActivity">
 
     <RelativeLayout
-        android:id="@+id/Grass_Activity"
+        android:id="@+id/TopHalf"
         android:layout_width="match_parent"
-        android:background="#FFFFFF"
-        android:layout_height="wrap_content"
-        tools:context="hapapps.bigcow.MainCowActivity">
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        >
 
-
-        <TextView
+        <ImageView
             android:layout_width="match_parent"
-            android:id="@+id/Grass"
-            android:layout_height="wrap_content"
-            android:onClick="eatGrass"
-            android:text="Eat some grass"
-            android:textColor="#000000"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:layout_alignParentTop="true"
+            android:layout_height="match_parent"
+            app:srcCompat="@color/colorAccent"
+            android:id="@+id/TopImage" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/grass"
+            android:id="@+id/grassIcon"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:id="@+id/GrassCounter"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textColor="#000000"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/Fulls"
-            android:layout_toStartOf="@+id/Fulls"
-            android:paddingRight="5dp"/>
-
-        <TextView
-            android:text="fulls"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/Fulls"
-            android:textColor="#000000"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textAlignment="center"
-            android:layout_alignBaseline= "@+id/Grass"
-            android:textSize="24sp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/Bull_Activity"
+        android:id="@+id/BottomHalf"
         android:layout_width="match_parent"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        tools:context="hapapps.bigcow.MainCowActivity">
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        >
+        <RelativeLayout
+            android:id="@+id/Grass_Activity"
+            android:layout_width="match_parent"
+            android:background="#FFFFFF"
+            android:layout_height="wrap_content"
+            tools:context="hapapps.bigcow.MainCowActivity">
 
-        <TextView
-            android:text="Flirt w bull"
-            android:onClick="feelTheLove"
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/Grass"
+                android:layout_height="wrap_content"
+                android:onClick="eatGrass"
+                android:text="Eat some grass"
+                android:textColor="#000000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/GrassCounter"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#000000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/Fulls"
+                android:layout_toStartOf="@+id/Fulls"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:text="fulls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Fulls"
+                android:textColor="#000000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textAlignment="center"
+                android:layout_alignBaseline= "@+id/Grass"
+                android:textSize="24sp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Bull_Activity"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/Grass_Activity"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:context="hapapps.bigcow.MainCowActivity">
+
+            <TextView
+                android:text="Flirt w bull"
+                android:onClick="feelTheLove"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:id="@+id/Bull"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
+
+            <TextView
+                android:text="loves"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Loves"
+                android:textColor="#000000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp"
+                android:layout_alignBaseline="@+id/Bull"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/BullCounter"
+                android:textColor="#000000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_alignBaseline="@+id/Bull"
+                android:layout_alignBottom="@+id/Bull"
+                android:paddingRight="5dp"
+                android:layout_toStartOf="@+id/Loves"
+                android:layout_toLeftOf="@+id/Loves"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:id="@+id/Bull"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            />
+            android:id="@+id/Milk_Activity"
+            android:layout_below="@+id/Bull_Activity"
+            android:visibility="gone"
+            tools:context="hapapps.bigcow.MainCowActivity">
 
-        <TextView
-            android:text="loves"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/Loves"
-            android:textColor="#000000"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textSize="24sp"
-            android:layout_alignBaseline="@+id/Bull"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            <TextView
+                android:text="Make some milk"
+                android:onClick="makeTheMilk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:id="@+id/Make_Milk"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
 
-        <TextView
-            android:text="0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/BullCounter"
-            android:textColor="#000000"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:layout_alignBaseline="@+id/Bull"
-            android:layout_alignBottom="@+id/Bull"
-            android:paddingRight="5dp"
-            android:layout_toStartOf="@+id/Loves"
-            android:layout_toLeftOf="@+id/Loves"/>
+            <TextView
+                android:text="milks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Milks"
+                android:textColor="#000000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp"
+                android:layout_alignBaseline="@+id/Make_Milk"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MilkCounter"
+                android:textColor="#000000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_alignBaseline="@+id/Make_Milk"
+                android:layout_alignBottom="@+id/Make_Milk"
+                android:paddingRight="5dp"
+                android:layout_toStartOf="@+id/Milks"
+                android:layout_toLeftOf="@+id/Milks"/>
+        </RelativeLayout>
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/Milk_Activity"
-        android:paddingTop="16dp"
-        android:visibility="gone"
-        tools:context="hapapps.bigcow.MainCowActivity">
-
-        <TextView
-            android:text="Make some milk"
-            android:onClick="makeTheMilk"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:id="@+id/Make_Milk"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            />
-
-        <TextView
-            android:text="milks"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/Milks"
-            android:textColor="#000000"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textSize="24sp"
-            android:layout_alignBaseline="@+id/Make_Milk"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-        <TextView
-            android:text="0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/MilkCounter"
-            android:textColor="#000000"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:layout_alignBaseline="@+id/Make_Milk"
-            android:layout_alignBottom="@+id/Make_Milk"
-            android:paddingRight="5dp"
-            android:layout_toStartOf="@+id/Milks"
-            android:layout_toLeftOf="@+id/Milks"/>
-    </RelativeLayout>
 </LinearLayout>

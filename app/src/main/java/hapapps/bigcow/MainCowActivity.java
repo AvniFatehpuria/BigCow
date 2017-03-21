@@ -51,7 +51,6 @@ public class MainCowActivity extends AppCompatActivity {
     }
 
     public void createCalf() {
-        calf.
 
     }
 
