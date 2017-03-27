@@ -81,7 +81,7 @@ public class Manager {
             if (calf <= love) {
                 value = value - 10;
                 haveCalf = true;
-                activity.createCalf();
+                ((receivedActivity)getActivity()).createCalf();
                 //if we have a calf, we can't flirt anymore, so we should gray it out
                 RelativeLayout bull = (RelativeLayout) activity.findViewById(R.id.Bull_Activity);
                 bull.setBackgroundColor(0x00000000);
